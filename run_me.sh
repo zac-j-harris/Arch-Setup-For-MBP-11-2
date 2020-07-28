@@ -29,4 +29,4 @@ mv ./runnable* /mnt/home/
 
 chmod +x /mnt/home/runnable*
 
-/mnt/home/runnable_0.sh
+arch-chroot /mnt /bin/bash -c "su - -c /home/runnable_0.sh"

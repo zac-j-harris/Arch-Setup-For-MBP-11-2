@@ -1,5 +1,7 @@
 #!/bin/sh
 
+arch-chroot /
+
 ln -sf /usr/share/zoneinfo/US/Eastern /etc/localtime
 hwclock --systohc
 # Uncomment locale in /etc/locale.gen
@@ -27,8 +29,8 @@ echo "$USRNAME:$USRPASS" | chpasswd
 usermod -aG sudo root
 usermod -aG sudo $USRNAME
 # vim /etc/sudoers
-echo "%sudo ALL=(ALL) ALL" >> /etc/sudoers
-
+echo "%sudo	ALL=(ALL) ALL" >> /etc/sudoers
+	
 # vim /etc/modules
 echo -e "coretemp\napplesmc" > /etc/modules
 
