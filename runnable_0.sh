@@ -1,6 +1,6 @@
 #!/bin/sh
 
-arch-chroot /
+# arch-chroot /
 
 ln -sf /usr/share/zoneinfo/US/Eastern /etc/localtime
 hwclock --systohc
