@@ -20,7 +20,7 @@ Add in boot option 'nomodeset'.
 Boot into ArchISO
 
 ```console
-  root@root-~$ git clone https://www.github.com/zac-j-harris/Arch-Setup-For-MBP-11-2
+  root@root-~$ curl -JLO https://raw.github.com/zac-j-harris/dev/Arch-Setup-For-MBP-11-2
 ```
 
 ### Step 2 - Run It
