@@ -56,8 +56,6 @@ chown -R $USRNAME /home/$USRNAME
 
 # umount -R /mnt
 
-reboot
-
 
 
 

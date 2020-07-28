@@ -1,6 +1,8 @@
 #!/bin/sh
 
-dhcpcd "$(ip link | grep enp0s)"
+ip link
+
+# dhcpcd "$(ip link | grep enp0s)"
 timedatectl set-ntp true
 
 curl -JLO https://raw.github.com/zac-j-harris/Arch-Setup-For-MBP-11-2/dev/runnable_0.sh
@@ -30,3 +32,7 @@ mv ./runnable* /mnt/home/
 chmod +x /mnt/home/runnable*
 
 arch-chroot /mnt /bin/bash -c "su - -c /home/runnable_0.sh"
+
+umount -R /mnt
+
+reboot
