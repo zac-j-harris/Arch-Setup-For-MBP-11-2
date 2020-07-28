@@ -8,9 +8,9 @@ timedatectl set-ntp true
 # Write
 # fdisk -p
 # echo "Which partition ..."
-mkswap /dev/sda4
+mkswap -F /dev/sda4
 swapon /dev/sda4
-mkfs.ext4 /dev/sda5
+mkfs.ext4 -F /dev/sda5
 mount /dev/sda5 /mnt
 mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
@@ -65,9 +65,9 @@ echo "default arch-*" > /boot/loader/loader.conf
 
 echo -e "$USRNAME:USRPASS\nroot:ROOTPASS" > /home/$USRNAME/upass.txt
 
-mv /home/runnable*.sh /home/$USRNAME/runnable*.sh
+mv /home/runnable* /home/$USRNAME/
 
-chmod +x /home/$USRNAME/runnable*.sh
+chmod +x /home/$USRNAME/runnable*
 
 chown -R $USRNAME /home/$USRNAME
 
