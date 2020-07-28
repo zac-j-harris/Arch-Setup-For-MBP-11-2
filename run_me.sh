@@ -18,14 +18,15 @@ mount /dev/sda1 /mnt/boot
 pacstrap /mnt base base-devel linux linux-firmware dhcpcd vim intel-ucode
 genfstab -U /mnt >> /mnt/etc/fstab
 # Change options for root partition to rw,relatime,data=ordered,discard
-sed 's/ext4       rw,relatime/&,data=ordered,discard/' /mnt/etc/fstab
+sed -i 's/ext4       rw,relatime/&,data=ordered,discard/' /mnt/etc/fstab
+mv ./runnable*.sh /mnt/home/runnable*.sh
 arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/US/Eastern /etc/localtime
 hwclock --systohc
 # Uncomment locale in /etc/locale.gen
-sed 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
+sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 locale-gen
-echo "LANG=en_US.UTF-8" > /etc/locale.conf
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 # root passwd
 echo "What... is your computer's quest? (Hostname)" && read HOSTNAME
 echo $HOSTNAME > /etc/hostname
@@ -43,7 +44,7 @@ echo "$USRNAME:$USRPASS" | chpasswd
 usermod -aG sudo root
 usermod -aG sudo $USRNAME
 # vim /etc/sudoers
-echo "%sudo      ALL = (ALL) ALL" > /etc/sudoers
+echo "%sudo      ALL = (ALL) ALL" >> /etc/sudoers
 %wheel      ALL = (ALL) ALL
 
 # vim /etc/modules
@@ -59,11 +60,19 @@ echo -e "title Arch Linux\nlinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd
 
 echo "default arch-*" > /boot/loader/loader.conf
 
+echo -e "$USRNAME:USRPASS\nroot:ROOTPASS" > /home/$USRNAME/upass.txt
+
+mv /home/runnable*.sh /home/$USRNAME/runnable*.sh
+
+chmod +x /home/$USRNAME/runnable*.sh
+
+chown -R $USRNAME /home/$USRNAME
+
 exit
 
-# umount -R /mnt
+umount -R /mnt
 
-# reboot
+reboot
 
 
 
