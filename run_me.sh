@@ -15,7 +15,8 @@ mount /dev/sda5 /mnt
 mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
 # Install stuff
-pacstrap /mnt base base-devel linux linux-firmware dhcpcd vim intel-ucode
+pacstrap /mnt base base-devel linux linux-firmware dhcpcd vim
+pacstrap --force /mnt intel-ucode
 genfstab -U /mnt >> /mnt/etc/fstab
 # Change options for root partition to rw,relatime,data=ordered,discard
 sed -i 's/ext4       rw,relatime/&,data=ordered,discard/' /mnt/etc/fstab
