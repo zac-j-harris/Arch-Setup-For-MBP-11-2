@@ -1,14 +1,15 @@
 # Arch-Setup-For-MBP-11-2
 
 
-Instructions on how I completed an Arch-Linux setup for an old (Late 2013 or version 11,2) Macbook pro.
+Instructions on how I Dual-Booted Arch-Linux on an old (Late 2013 or version 11,2) Macbook pro.
 
+Disk: Partition 1-EFI, 4-Swap, 5-Arch
 WM: BSPWM
 
 
 ### Step 1 - Get Ready to Run It
 
-\hline
+---
 
 Select EFI Boot upon power up
 
@@ -24,6 +25,6 @@ Boot into ArchISO
 
 ### Step 2 - Run It
 
-\hline
+---
 
 ./Arch-Setup-For-MBP-11-2/run_me.sh
