@@ -20,7 +20,7 @@ pacstrap --force /mnt intel-ucode
 genfstab -U /mnt >> /mnt/etc/fstab
 # Change options for root partition to rw,relatime,data=ordered,discard
 sed -i 's/ext4       rw,relatime/&,data=ordered,discard/' /mnt/etc/fstab
-mv ./runnable*.sh /mnt/home/runnable*.sh
+mv ./runnable* /mnt/home/
 arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/US/Eastern /etc/localtime
 hwclock --systohc
