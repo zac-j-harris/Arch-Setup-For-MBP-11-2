@@ -29,4 +29,4 @@ mv ./runnable* /mnt/home/
 
 chmod +x /mnt/home/runnable*
 
-./mnt/home/runnable_0.sh
+/mnt/home/runnable_0.sh
