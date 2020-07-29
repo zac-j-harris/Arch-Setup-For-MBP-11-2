@@ -50,3 +50,16 @@ Sign in as yourself
 ```console
 testusr@testhost-~$ ./runnable_2.sh
 ```
+
+
+
+
+# Notes (Future Updates)
+
+***
+
+- No getty support
+- No WiFi setup *yet*
+- Basic desktop config
+- No user input
+- Noisy
