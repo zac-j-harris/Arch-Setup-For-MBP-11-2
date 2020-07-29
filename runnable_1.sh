@@ -11,7 +11,7 @@ RPASS=$(sed -n '/ROOT/{s/ROOT:.*://; p; q;}' upass.txt)
 echo $UPASS | sudo dhcpcd $(ip link | sed -n 'enp0s/{s/2: //; s/:.*//; p;}')
 
 
-touch /etc/udev/rules.d/90-xhc_sleep.rules
+sudo touch /etc/udev/rules.d/90-xhc_sleep.rules
 echo -e 'disable wake from S3 on XHC1\nSUBSYSTEM=="pci", KERNEL=="0000:00:14.0", ATTR{power/wakeup}="disabled"' | sudo tee -a /etc/udev/rules.d/90-xhc_sleep.rules
 
 # Install yay from git (install git first)

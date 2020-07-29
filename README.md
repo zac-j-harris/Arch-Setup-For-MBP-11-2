@@ -27,4 +27,17 @@ Boot into ArchISO
 
 ---
 
+```console
 ./Arch-Setup-For-MBP-11-2/run_me.sh
+```
+
+### Step 3 - Run Runnable_1.sh 
+
+---
+
+Sign in as yourself
+
+```console
+./Arch-Setup-For-MBP-11-2/run_me.sh
+```
+
