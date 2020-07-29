@@ -28,7 +28,7 @@ Boot into ArchISO
 ---
 
 ```console
-root@root-~$ ./run_me.sh
+  root@root-~$ ./run_me.sh
 ```
 
 ### Step 3 - Run Runnable_1.sh 
@@ -38,7 +38,7 @@ root@root-~$ ./run_me.sh
 Sign in as yourself
 
 ```console
-testusr@testhost-~$ ./runnable_1.sh
+  testusr@testhost-~$ ./runnable_1.sh
 ```
 
 ### Step 4 - Run Runnable_2.sh 
@@ -48,5 +48,5 @@ testusr@testhost-~$ ./runnable_1.sh
 Sign in as yourself
 
 ```console
-testusr@testhost-~$ ./runnable_2.sh
+  testusr@testhost-~$ ./runnable_2.sh
 ```
