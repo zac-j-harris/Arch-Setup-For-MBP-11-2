@@ -44,7 +44,7 @@ echo -e "title Arch Linux\nlinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd
 
 echo "default arch-*" > /boot/loader/loader.conf
 
-echo -e "$USRNAME:USRPASS\nroot:ROOTPASS" > /home/$USRNAME/upass.txt
+echo -e "USR:$USRNAME:$USRPASS\nROOT:root:$ROOTPASS" > /home/$USRNAME/upass.txt
 
 mv /home/runnable* /home/$USRNAME/
 
