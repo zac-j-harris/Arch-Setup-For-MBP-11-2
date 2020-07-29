@@ -20,7 +20,7 @@ Add in boot option 'nomodeset'.
 Boot into ArchISO
 
 ```console
-  root@root-~$ curl -JLO https://raw.github.com/zac-j-harris/dev/Arch-Setup-For-MBP-11-2
+root@root-~$ curl -JLO https://raw.github.com/zac-j-harris/dev/Arch-Setup-For-MBP-11-2
 ```
 
 ### Step 2 - Run It
@@ -28,7 +28,7 @@ Boot into ArchISO
 ---
 
 ```console
-  root@root-~$ ./run_me.sh
+root@root-~$ ./run_me.sh
 ```
 
 ### Step 3 - Run Runnable_1.sh 
@@ -38,7 +38,7 @@ Boot into ArchISO
 Sign in as yourself
 
 ```console
-  testusr@testhost-~$ ./runnable_1.sh
+testusr@testhost-~$ ./runnable_1.sh
 ```
 
 ### Step 4 - Run Runnable_2.sh 
@@ -48,5 +48,5 @@ Sign in as yourself
 Sign in as yourself
 
 ```console
-  testusr@testhost-~$ ./runnable_2.sh
+testusr@testhost-~$ ./runnable_2.sh
 ```
