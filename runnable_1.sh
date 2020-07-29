@@ -36,6 +36,8 @@ sudo systemctl enable cpupower
 
 # vim /etc/default/cpupower
 
+sed -e 's/low_temp = 63/low_temp = 55/' -e 's/high_temp = 66/high_temp = 70/' -e 's/max_temp = 86/max_temp = 85/' /etc/mbpfan.conf
+
 echo -e "# Define CPUs governor\ngovernor='powersave'" | sudo tee -a /etc/default/cpupower
 
 yay --noconfirm -S alsa-utils
