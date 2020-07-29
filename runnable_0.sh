@@ -29,7 +29,7 @@ echo "$USRNAME:$USRPASS" | chpasswd
 usermod -aG sudo root
 usermod -aG sudo $USRNAME
 # vim /etc/sudoers
-echo "%sudo	ALL=(ALL) ALL" >> /etc/sudoers
+echo "%sudo ALL=(ALL) ALL" >> /etc/sudoers
 	
 # vim /etc/modules
 echo -e "coretemp\napplesmc" > /etc/modules
