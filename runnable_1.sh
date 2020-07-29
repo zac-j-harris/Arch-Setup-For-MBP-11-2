@@ -8,7 +8,7 @@ RPASS=$(sed -n '/ROOT/{s/ROOT:.*://; p; q;}' upass.txt)
 
 
 
-echo $UPASS | sudo dhcpcd $(ip link | sed -n 'enp0s/{s/2: //; s/:.*//; p;}')
+echo $UPASS | sudo -S dhcpcd $(ip link | sed -n '/enp0s/{s/2: //; s/:.*//; p;}')
 
 
 sudo touch /etc/udev/rules.d/90-xhc_sleep.rules
@@ -19,7 +19,7 @@ sudo pacman --noconfirm -S git
 cd /tmp/
 git clone https://aur.archlinux.org/yay.git
 cd ./yay
-makepkg -si
+makepkg --noconfirm -si
 cd
 
 yay --noconfirm -S broadcom-wl

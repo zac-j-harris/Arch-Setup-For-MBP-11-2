@@ -8,12 +8,12 @@ UPASS=$(sed -n '/USR/{s/USR:.*://; p; q;}' upass.txt)
 RNAME=root
 RPASS=$(sed -n '/ROOT/{s/ROOT:.*://; p; q;}' upass.txt)
 
-yay --noconfirm -S xorg-server xorg-xrandr xorg-xinit xorg-xset xterm(maybe) xf86-video-intel sxhkd bspwm tmux xorg-xclock neofetch
+yay --noconfirm -S xorg-server xorg-xrandr xorg-xinit xorg-xset xterm xf86-video-intel sxhkd bspwm tmux xorg-xclock neofetch
 
 # sudo chown -r you ~/you
 
 # vim /etc/X11/xorg.conf.d/30-touchpad.conf
-echo $UPASS | sudo touch /etc/X11/xorg.conf.d/30-touchpad.conf
+echo $UPASS | sudo -S touch /etc/X11/xorg.conf.d/30-touchpad.conf
 echo -e 'Section "InputClass"\n    Identifier "touchpad"\n    Driver "libinput"\n    MatchIsTouchpad "on"\n    Option "Tapping" "on"\n    Option "NaturalScrolling" "true"\n    Option "ClickMethod" "clickfinger"\n    Option "AccelProfile" "flat"\nEndSection' | sudo tee -a /etc/X11/xorg.conf.d/30-touchpad.conf
 
 
