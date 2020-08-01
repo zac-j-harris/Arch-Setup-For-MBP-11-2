@@ -1,0 +1,23 @@
+#!/bin/bash
+
+function colorscheme
+{
+    sed -i 's/include.*/include <\/home\/raj\/.config\/colorschemes\/faint>/' ~/.config/X11/xresources
+    xrdb $HOME ~/.config/X11/xresources
+}
+
+function wall
+{
+    feh --bg-fill ~/Pictures/faint.*
+}
+
+function rundunst
+{
+    killall dunst
+    run_dunst &
+}
+
+colorscheme
+wall
+rundunst
+bspc wm -r

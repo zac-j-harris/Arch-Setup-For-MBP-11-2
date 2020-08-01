@@ -1,0 +1,11 @@
+#!/bin/bash
+[[ -f ~/.config/X11/xresources ]] && xrdb -merge -I$HOME ~/.config/X11/xresources
+[[ -f ~/.config/X11/xmodmap ]] && xmodmap ~/.config/X11/xmodmap
+xset +fp /home/raj/.local/share/fonts
+xset fp rehash
+xsetroot -cursor_name left_ptr
+xbacklight -set 20%
+~/.fehbg
+mpd &
+sxhkd &
+exec bspwm 

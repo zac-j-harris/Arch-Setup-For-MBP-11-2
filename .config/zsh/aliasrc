@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# aliases
+alias s="sudo"
+alias v="vim"
+alias c="clear"
+alias ls="ls -a --color"
+alias g="git"
+alias gc="git clone"
+alias gcm="git commit -m"
+alias ga="git add"
+alias gpl="git pull"
+alias gph="git push"
+alias ka="killall"
+alias z="zathura"
+alias rf="rm -rf"
+alias clean="sudo emerge --depclean"
+alias newuse="sudo emerge --update --newuse --deep @world"
+alias install="sudo emerge -av"
+alias update="sudo emerge -uDU --keep-going --with-bdeps=y @world"
+alias remove="sudo emerge --deselect"
+alias pretend="emerge -pv"
+alias sync="sudo emerge --sync"
+alias search="emerge --search"
+alias installed="cat /var/lib/portage/world"
+alias xrdb="xrdb -load ~/.config/X11/xresources"
+alias put="trash-put"
+alias config='/usr/bin/git --git-dir=$HOME/Projects/dotfiles/ --work-tree=$HOME'

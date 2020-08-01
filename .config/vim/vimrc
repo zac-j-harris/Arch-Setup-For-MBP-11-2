@@ -1,0 +1,121 @@
+syntax on   " syntax highlighting
+set wildmenu    " autocompletion for commandmenu
+set number  " line number
+set tabstop=4 " four spaces tab
+set expandtab   " convert tabs to spaces
+set shiftwidth=4    " indents of four spaces
+set softtabstop=4   " backspace will remove tabs instead of space
+set wrap    " wrap lines
+set mouse=a " enable use of the mouse
+set showmode!   " hide current mode
+set showmatch   " highlight matching brackets
+set t_Co=256 " terminal color
+set background=light
+set incsearch " search as characters are entered
+set ignorecase  " case insensitive search
+set smartcase   " case sensitive when uppercase
+set laststatus=2    " Always display the status line
+set noswapfile  " swap files won't be created
+set nobackup    " no backup
+set undofile
+set autoindent
+set smartindent
+"set cursorline  "highlight current line
+let mapleader = " " " space is the leader key
+
+" remove search results
+command! H let @/=""
+
+" disble automatic comments on new line
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" line numbers color
+highlight LineNr ctermfg=blue
+
+" remove all whitespace and newlines at end of file on save
+autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritepre * %s/\n\+\%$//e
+
+" xdg base dir
+set undodir=$XDG_DATA_HOME/vim/undo
+set directory=$XDG_DATA_HOME/vim/swap
+set backupdir=$XDG_DATA_HOME/vim/backup
+set viewdir=$XDG_DATA_HOME/vim/view
+set viminfo+=n$XDG_DATA_HOME/vim/viminfo
+set runtimepath=$XDG_CONFIG_HOME/vim,$VIMRUNTIME,$XDG_CONFIG_HOME/vim/after
+
+" statusline
+hi User1 ctermfg=black ctermbg=green
+hi User2 ctermfg=black ctermbg=blue
+hi User3 ctermfg=black ctermbg=yellow
+hi User4 ctermfg=black ctermbg=magenta
+hi User5 ctermfg=black ctermbg=cyan
+hi User6 ctermfg=none ctermbg=black
+
+let g:currentmode={
+    \ 'n'  : 'NORMAL ',
+    \ 'v'  : 'VISUAL ',
+    \ 'V'  : 'V·Line ',
+    \ '' : 'V·Block ',
+    \ 'i'  : 'INSERT ',
+    \ 'R'  : 'R ',
+    \ 'Rv' : 'V·Replace ',
+    \ 'c'  : 'Command ',
+    \}
+
+set statusline=
+set statusline+=%2*\ %2*%{toupper(g:currentmode[mode()])}
+set statusline+=%6*\ %f
+set statusline+=\ %6*\ %{&modified?'[+]':''}
+set statusline+=\ %=%6*\ %Y
+set statusline+=\ %1*\ %v:%l\/%L
+set statusline+=\ "
+
+" auto close
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+
+" espace using hh
+inoremap hh <esc>
+
+" save and quit
+nmap <leader>w :w!<cr>
+nmap <leader>q :wq!<cr>
+
+" shift key fixes
+cmap W w
+cmap WQ wq
+cmap wQ wq
+cmap Q q
+
+" toggle undotree
+nmap <leader>u :UndotreeToggle<cr>
+
+" window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" nerdtree settings
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+nmap <leader>n :NERDTreeToggle<cr>
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
+let NERDTreeShowHidden=1
+
+" plugins
+call plug#begin('~/.config/vim/plugged')
+Plug 'preservim/nerdtree'
+Plug 'mbbill/undotree'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+call plug#end()
