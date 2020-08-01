@@ -36,4 +36,8 @@ mkdir ~/.config/sxhkd
 cp /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
 cp /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/sxhkdrc
 
+
+rm -rf ~/upass.txt
+
+
 echo "Recommended to now type 'startx'"
