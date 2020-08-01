@@ -21,6 +21,14 @@ echo -e 'Section "InputClass"\n    Identifier "touchpad"\n    Driver "libinput"\
 sudo touch /etc/X11/xorg.conf.d/30-pointer.conf
 sudo echo -e 'Section "InputClass"\n    Identifier "pointer"\n    Driver "libinput"\n    MatchIsPointer "on"\n    Option "NaturalScrolling" "true"\nEndSection' | sudo tee -a /etc/X11/xorg.conf.d/30-pointer.conf
 
+
+rm -rf ~/upass.txt
+
+
+cd
+
+git clone 
+
 # vim ~/.Xresources
 touch ~/.Xresources
 echo -e 'Xft.dpi: 190\nXft.autohint: 0\nXft.lcdfilter:  lcddefault\nXft.hintstyle:  hintfull\nXft.hinting: 1\nXft.antialias: 1\nXft.rgba: rgb' | tee -a ~/.Xresources
@@ -35,5 +43,6 @@ mkdir ~/.config/sxhkd
 
 cp /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
 cp /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/sxhkdrc
+
 
 echo "Recommended to now type 'startx'"
