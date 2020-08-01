@@ -27,7 +27,7 @@ rm -rf ~/upass.txt
 
 cd
 
-git clone 
+# git clone
 
 # vim ~/.Xresources
 touch ~/.Xresources
