@@ -9,20 +9,20 @@ sed -i 's/#en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen
 locale-gen
 echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 # root passwd
-# echo "What... is your computer's quest? (Hostname)" && read HOSTNAME
-HOSTNAME=testhost
+echo "What... is your computer's quest? (Hostname)" && read HOSTNAME
+# HOSTNAME=testhost
 echo $HOSTNAME > /etc/hostname
-# echo "What... is the capital of Assyria? (Root Password)" && read ROOTPASS
-ROOTPASS=toor
+echo "What... is the capital of Assyria? (Root Password)" && read ROOTPASS
+# ROOTPASS=toor
 echo "root:$ROOTPASS" | chpasswd
 # vim /etc/hosts
 echo -e "127.0.0.1   localhost\n::1     localhost\n127.0.1.1   $HOSTNAME.localdomain  $HOSTNAME" >> /etc/hosts
 
 # usr passwd
-# echo "What... is your quest? (Username)" && read USRNAME
-USRNAME=testusr
-# echo "What... is your favorite color? (User Password)" && read USRPASS
-USRPASS=toor
+echo "What... is your quest? (Username)" && read USRNAME
+# USRNAME=testusr
+echo "What... is your favorite color? (User Password)" && read USRPASS
+# USRPASS=toor
 groupadd sudo
 useradd -m -g users -G wheel -s /bin/bash $USRNAME
 echo "$USRNAME:$USRPASS" | chpasswd
