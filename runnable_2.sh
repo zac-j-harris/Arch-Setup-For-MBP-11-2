@@ -45,4 +45,4 @@ cp /usr/share/doc/bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
 cp /usr/share/doc/bspwm/examples/sxhkdrc ~/.config/sxhkd/sxhkdrc
 
 
-echo "Recommended to now type 'startx'"
+echo "Recommended to now type 'startx', and to change ~/.config/sxhkd/sxhkdrc to match whatever you install"
