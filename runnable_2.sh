@@ -8,7 +8,7 @@ UPASS=$(sed -n '/USR/{s/USR:.*://; p; q;}' upass.txt)
 RNAME=root
 RPASS=$(sed -n '/ROOT/{s/ROOT:.*://; p; q;}' upass.txt)
 
-echo $UPASS | yay --sudoflags -S --noconfirm -S xorg-server xorg-xrandr xorg-xinit xorg-xset xterm xf86-video-intel sxhkd bspwm tmux xorg-xclock neofetch
+echo $UPASS | yay --sudoflags -S --noconfirm -S xorg-server xorg-xrandr xorg-xinit xorg-xset xterm xf86-video-intel sxhkd bspwm tmux xorg-xclock neofetch firefox rofi
 
 # sudo chown -r you ~/you
 

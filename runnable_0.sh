@@ -38,7 +38,7 @@ bootctl --path=/boot install
 
 # vim /boot/loader/entries/arch.conf
 
-echo -e "title Arch Linux\nlinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /initramfs-linux.img\noptions root=/dev/sda5 intel_iommu=on" > /boot/loader/entries/arch.conf
+echo -e "title Arch Linux\nlinux /vmlinuz-linux\ninitrd /intel-ucode.img\ninitrd /initramfs-linux.img\noptions root=/dev/sda3 intel_iommu=on" > /boot/loader/entries/arch.conf
 
 # vim /boot/loader/loader.conf
 

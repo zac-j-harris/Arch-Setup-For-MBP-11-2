@@ -16,8 +16,8 @@ curl -JLO https://raw.github.com/zac-j-harris/Arch-Setup-For-MBP-11-2/dev/runnab
 # echo "Which partition ..."
 mkswap -F /dev/sda4
 swapon /dev/sda4
-mkfs.ext4 -F /dev/sda5
-mount /dev/sda5 /mnt
+mkfs.ext4 -F /dev/sda3
+mount /dev/sda3 /mnt
 mkdir /mnt/boot
 mount /dev/sda1 /mnt/boot
 # Install stuff
