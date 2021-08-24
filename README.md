@@ -3,6 +3,8 @@
 
 Instructions on how I Dual-Booted Arch-Linux on an old (Late 2013 or version 11,2) Macbook pro.
 
+More of a prototyped build, so don't expect a straightforward install. However, it should contain everything needed to get it to run.
+
 Disk: Partition 1-EFI, 4-Swap, 5-Arch
 WM: BSPWM
 
